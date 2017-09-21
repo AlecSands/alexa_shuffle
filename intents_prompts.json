@@ -1,0 +1,102 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "CreateNoteIntent",
+      "samples": [
+        "to add an idea",
+        "to add a note"
+      ],
+      "slots": [
+        {
+          "name": "Note",
+          "type": "AMAZON.Language",
+          "samples": [
+            "{Note}"
+          ]
+        },
+        {
+          "name": "Topic",
+          "type": "AMAZON.Language",
+          "samples": [
+            "{Topic}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetAllTopicsIntent",
+      "samples": [
+        "for all topics",
+        "what are all the topics",
+        "what are the topics"
+      ],
+      "slots": []
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-CreateNoteIntent.IntentSlot-Note",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What idea did you have?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateNoteIntent.IntentSlot-Topic",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which topic would you like to contribute to?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "CreateNoteIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Note",
+            "type": "AMAZON.Language",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateNoteIntent.IntentSlot-Note"
+            }
+          },
+          {
+            "name": "Topic",
+            "type": "AMAZON.Language",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateNoteIntent.IntentSlot-Topic"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
