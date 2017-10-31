@@ -13,20 +13,21 @@ Alexa Skills Kit, AWS Lambda, Node.JS, Request, Javascript, and JSON.
 - Clone the repository to your local computer
 - Run 'npm install' and 'npm start' in terminal
 - Create an AWS Lambda function through the AWS console
+- Modify the paths in the [index.js](index.js) to reference your hosted server for the main Idea Shuffle application
 - Upload a zip file to the the AWS Lambda function with all the files in this repository except for [intents_prompts.json](intents_prompts.json)
 - Create a new Alexa Skill through the Amazon developer console
-- Create new intents and prompts under the interaction model which match the [intents_prompts.json] file.
+- Create new intents and prompts under the interaction model which match the [intents_prompts.json](intents_prompts.json) file.
+- Enable the skill for testing and then load it onto your Amazon Echo
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- An Amazon Web Service (AWS) server will be required for the Alexa portion of the app.
-- An Amazon Developer account will be required to create the skill with intents and slots.
+- You have and Amazon and Amazon Developer account
+- You have already setup of the server for the main [Idea Shuffle](https://github.com/AlecSands/idea_shuffle) application
 
+<!-- ## Screen Shots
 
-## Screen Shots
-
-![](screenshots/ideashuffle.gif)
+![](screenshots/ideashuffle.gif) -->
 
 ## Documentation
 
@@ -34,28 +35,14 @@ The scope document that was used to guide the development of this web applicatio
 
 ### Completed Features
 
-High level list of items completed.
-
-- [x] User sign in using passport
-- [x] Add feature to select and add topics
-- [x] Enable users to add comments
-- [x] Enable users to shuffle comments
-- [x] Enable users to delete comments
-- [x] Display all categories as accordions
-- [x] Add drag and drop functionality to reorganize comments and categories. (stretch goal)
-- [x] Implement D3 to display the structure visually (stretch goal)
-- [x] Add angular material styling
-- [x] Call IBM Watson API to analyze the tone of the current brainstorming session
+- [x] Users can retrieve a list of all the current topics from the database and have it read to them
+- [x] Users can add ideas to the database from the Echo
+- [x] Interaction model is set to a dialogue model to retrieve multiple pieces of information
 
 ### Next Steps
 
-Features that you would like to add at some point in the future.
-
-- [ ] Modify the D3 graphic to display the results of the IBM Watson API call.
-
-<!-- ## Deployment
-
-Add additional notes about how to deploy this on a live system -->
+- [ ] Add more more options for how the user interacts with the existing brainstorming ideas
+- [ ] Add feature so users can hear what all the ideas in the current topi are
 
 ## Authors
 

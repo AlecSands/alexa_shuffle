@@ -35,7 +35,7 @@ const handlers = {
 
     var filledSlots = delegateSlotCollection.call(this);
 
-
+    // Modify this link to your hosted server for the main Idea Shuffle application
     request.post('https://tranquil-waters-36326.herokuapp.com/topic/alexa/' + note, {form: {key: topic}}, function (error, response, body) {
       if (error) {
         console.log('error:', error);
@@ -50,6 +50,7 @@ const handlers = {
   // Lists out all topics in the db.
   'GetAllTopicsIntent': function () {
     var importantThis = this;
+    // Modify this link to your hosted server for the main Idea Shuffle application
     // Sends a request to the server for topics.
     request('https://tranquil-waters-36326.herokuapp.com/topic/', function (error, response, body) {
       if (error) {
@@ -105,13 +106,6 @@ const handlers = {
 exports.handler = function (event, context) {
   console.log('logging event on line 203:', event);
   currentEvent = event;
-  // console.log('logging event on line 203:', event.request.intent.slots.Note.value);
-  // if (!event.request.intent.slots.Note.value) {
-  //   note = event.request.intent.slots.Note.value;
-  // }
-  // if (event.request.intent.slots.Topic.value !== undefined) {
-  //   topic = event.request.intent.slots.Topic.value;
-  // }
   console.log('logging context on line 203:', context);
   const alexa = Alexa.handler(event, context);
   alexa.APP_ID = APP_ID;
