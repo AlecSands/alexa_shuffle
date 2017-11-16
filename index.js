@@ -1,12 +1,5 @@
 /* eslint-disable  func-names */
 /* eslint quote-props: ["error", "consistent"]*/
-/**
-* This sample demonstrates a simple skill built with the Amazon Alexa Skills
-* nodejs skill development kit.
-* This sample supports multiple lauguages. (en-US, en-GB, de-DE).
-* The Intent Schema, Custom Slots and Sample Utterances for this skill, as well
-* as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-fact
-**/
 
 'use strict';
 
@@ -75,20 +68,6 @@ const handlers = {
   },
   'LaunchRequest': function () {
     this.emit('GetFact');
-  },
-  'GetNewFactIntent': function () {
-    this.emit('GetFact');
-  },
-  'GetFact': function () {
-    // Get a random space fact from the space facts list
-    // Use this.t() to get corresponding language data
-    const factArr = this.t('FACTS');
-    const factIndex = Math.floor(Math.random() * factArr.length);
-    const randomFact = factArr[factIndex];
-
-    // Create speech output
-    const speechOutput = this.t('GET_FACT_MESSAGE') + randomFact;
-    this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomFact);
   },
   'AMAZON.HelpIntent': function () {
     const speechOutput = this.t('HELP_MESSAGE');
